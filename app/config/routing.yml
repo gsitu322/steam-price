@@ -1,3 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
+gs_steam_weapons:
+    resource: "@GSSteamWeaponsBundle/Controller/"
     type:     annotation
+    prefix:   /
