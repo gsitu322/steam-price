@@ -12,6 +12,19 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Weapon
 {
+    const EXTERIOR_FIELD_TESTED     = 'Field-Tested';
+    const EXTERIOR_MINIMAL_WEAR     = 'Minimal Wear';
+    const EXTERIOR_BATTLE_SCARRED   = 'Battle-Scarred';
+    const EXTERIOR_WELL_WORN        = 'Well-Worn';
+    const EXTERIOR_FACTORY_NEW      = 'Factory New';
+
+    const CATEGORY_NORMAL           = '';
+    const CATEGORY_STATTRACK        = 'StatTrak™ ';
+    const CATEGORY_SOUVENIR         = 'Souvenir ';
+    const CATEGORY_STAR             = '★ ';
+    const CATEGORY_STAR_STATTRACK   = '★ StatTrak™ ';
+
+
     /**
      * @var integer
      *
@@ -34,6 +47,26 @@ class Weapon
      */
     private $name;
 
+
+    public function getExteriorList() {
+        return array(
+            self::EXTERIOR_FIELD_TESTED,
+            self::EXTERIOR_MINIMAL_WEAR,
+            self::EXTERIOR_BATTLE_SCARRED,
+            self::EXTERIOR_WELL_WORN,
+            self::EXTERIOR_FACTORY_NEW,
+        );
+    }
+
+    public function getCategory(){
+        return array(
+            self::CATEGORY_NORMAL,
+            self::CATEGORY_STATTRACK,
+            self::CATEGORY_SOUVENIR,
+            self::CATEGORY_STAR,
+            self::CATEGORY_STAR_STATTRACK,
+        );
+    }
 
     /**
      * Get id
@@ -91,4 +124,5 @@ class Weapon
     {
         return $this->name;
     }
+
 }
